@@ -1,17 +1,27 @@
+/* !Created root variables for cleaner CSS */
+:root {
+  --background-color: #d9dcd6; 
+  --blue-1: #2a607c;
+  --blue-2: #2589bd;
+  --blue-3: #0072bb;
+  --background-gradient: linear-gradient(90deg, #0072bb 0%, #0072bb 10%, #2589bd 100%);
+  --background-gradient-reverse: linear-gradient(-90deg, #0072bb 0%, #0072bb 10%, #2589bd 100%);
+}
+
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    background-color: #d9dcd6;
+  background-color: var(--background-color);
 }
 
-.header {
+.header  {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #2a607c;
+    background-color: var(--blue-1);
     color: #ffffff;
 }
 
@@ -24,21 +34,20 @@ body {
     color: #d9dcd6;
 }
 
-.header div {
+/* made a class for the nav */
+.header .nav--header {
     padding-top: 15px;
     margin-right: 20px;
     float: right;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
 }
-
-.header div ul {
+.header .nav--header ul {
     list-style-type: none;
 }
-
-.header div ul li {
-    display: inline-block;
-    margin-left: 25px;
+.header .nav--header ul li {
+  display: inline-block;
+  margin-left: 25px;
 }
 
 a {
@@ -51,12 +60,14 @@ p {
 }
 
 .hero {
-    height: 800px;
-    width: 100%;
-    margin-bottom: 25px;
-    background-image: url("../images/digital-marketing-meeting.jpg");
-    background-size: cover;
-    background-position: center;
+  height: 800px;
+  width: 100%;
+  margin-bottom: 25px;
+  background-image: url("../images/digital-marketing-meeting.jpg");
+  background-size: cover;
+  background-position: center;
+  background-position-y: -200px;
+  box-shadow: 0 5px 5px 0 grey;
 }
 
 .float-left {
@@ -69,132 +80,105 @@ p {
     margin-left: 25px;
 }
 
+.content--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
 .content {
-    width: 75%;
-    display: inline-block;
-    margin-left: 20px;
+  width: 75%;
+  display: inline-block;
+}
+.content div {
+  height: 300px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 25px;
+
+  background-image: var(--background-gradient);
+  color: #ffffff;
+
+  display: grid;
+  grid-template-columns: 35% 25px 1fr;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  box-shadow: -10px 10px 15px 0 grey;
+  border-radius: 4px;
+}
+.content img {
+  min-height: 300px;
+  max-width: 100%;
+  align-self: center;
+  justify-self: center;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  filter: blur(0.5px);
+}
+.content h2 { 
+  width: fit-content;
+  justify-self: flex-start;
+  position: relative;
+  margin: 25px 0;
+  grid-column: 3;
+  grid-row: 1;
+  margin-bottom: 20px;
+  font-size: 2vw;
+}
+.content h2::after {
+  content: "";
+  width: calc(100% + 15px);
+  height: 4px;
+
+  background-color: white;
+  border-radius: 100px;
+
+  position: absolute;
+  bottom: -8px; right: -15px;
+}
+.content p {
+  width: 75%;
+  grid-column: 3;
+  grid-row: 2;
+  justify-self: flex-start;
+  font-size: 0.9vw;
+  line-height: 1.75vw;
 }
 
 .benefits {
-    margin-right: 20px;
-    padding: 20px;
-    clear: both;
-    float: right;
-    width: 20%;
-    height: 100%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #2589bd;
-}
+  align-self: flex-start;
+  padding: 20px;
+  clear: both;
+  float: right;
+  width: 20%;
+  height: 950px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: var(--blue-2);
+  text-align: center;
+  border-radius: 4px;
 
-.benefit-lead {
-    margin-bottom: 32px;
-    color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 10 15px 0 grey;
 }
+.benefits h3 { font-size: 1.75vw; }
+.benefits img { margin: 0 auto; display: block; max-width: 150px; }
+.benefits p { font-size: 1vw; }
+.benefits div { overflow: hidden; color: #ffffff; margin: auto 0 auto 0; }
 
-.benefit-brand {
-    margin-bottom: 32px;
-    color: #ffffff;
-}
 
-.benefit-cost {
-    margin-bottom: 32px;
-    color: #ffffff;
-}
-
-.benefit-lead h3 {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.benefit-brand h3 {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.benefit-cost h3 {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.benefit-lead img {
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
-}
-
-.benefit-brand img {
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
-}
-
-.benefit-cost img {
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
-}
-
-.search-engine-optimization {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-}
-
-.online-reputation-management {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-}
-
-.social-media-marketing {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-}
-
-.search-engine-optimization img {
-    max-height: 200px;
-}
-
-.online-reputation-management img {
-    max-height: 200px;
-}
-
-.social-media-marketing img {
-    max-height: 200px;
-}
-
-.search-engine-optimization h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-}
-
-.online-reputation-management h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-}
-
-.social-media-marketing h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-}
+.online-reputation-management { background-image: var(--background-gradient-reverse) !important; grid-template-columns: calc(65% - 25px) 25px 35% !important; }
+.online-reputation-management img { margin: 0; grid-column: 3; }
+.online-reputation-management h2, .online-reputation-management p { justify-self: flex-end; text-align: right; grid-column: 1; }
+.online-reputation-management h2::after { right: 0; }
 
 .footer {
-    padding: 30px;
-    clear: both;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: center;
+  padding: 30px;
+  margin-top: 50px;
+  clear: both;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  background-color: var(--background-color);
+  filter: brightness(0.95);
 }
-
-.footer h2 {
-    font-size: 20px;
-}
+.footer h2 { font-size: 20px; }
