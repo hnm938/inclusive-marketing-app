@@ -21,7 +21,9 @@ but it was a fun and enjoyable task.
 
 ### Before and After
 
-![before](C:\Users\Owner\Desktop\Bootcamp\Projects\inclusive-marketing-app\assets\images\before.gif)
+![before 1](https://user-images.githubusercontent.com/32249670/232341802-8d72c8e8-fd75-46ea-a098-609cd7ba72c1.png)
+![after 1](https://user-images.githubusercontent.com/32249670/232341808-5474a54d-5743-434b-8eae-f4a02c16c452.png)
 
-![after](C:\Users\Owner\Desktop\Bootcamp\Projects\inclusive-marketing-app\assets\images\after.gif)
+![before 2](https://user-images.githubusercontent.com/32249670/232341805-0ef61934-75d3-4cbd-bdcc-6f8ffa256349.png)
+![after 2](https://user-images.githubusercontent.com/32249670/232341810-bdad27d8-1b64-4508-ad60-39a2745382c0.png)
 
