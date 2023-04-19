@@ -1,4 +1,11 @@
 /* !Created root variables for cleaner CSS */
+
+/* 
+  CSS Change Notes:
+  - Removed unused float classes (.float-left, .float-right)
+  - Change the default font to Trebunchet MS
+  - Added extra css to most classes (header, hero, etc.)
+*/
 :root {
   --white-1: #d9dcd6;
   --white-2: #bcbfba;
@@ -115,7 +122,7 @@ a { color: var(--white-1); text-decoration: none; }
   width: 75%;
   display: inline-block;
 }
-.content div {
+.content section, .content card {
   height: 300px;
   margin-bottom: 25px;
 
@@ -138,7 +145,7 @@ a { color: var(--white-1); text-decoration: none; }
   grid-row: 1 / span 2;
   filter: blur(0.5px);
 }
-.content h2 { 
+.content h1 { 
   width: fit-content;
   justify-self: flex-start;
   position: relative;
@@ -148,7 +155,7 @@ a { color: var(--white-1); text-decoration: none; }
   margin-bottom: 20px;
   font-size: 2vw;
 }
-.content h2::after {
+.content h1::after {
   content: "";
   width: calc(100% + 15px);
   height: 4px;
@@ -169,6 +176,8 @@ a { color: var(--white-1); text-decoration: none; }
   font-weight: lighter;
 }
 
+
+/* Removed and joined uneeded repeating class references (.benefit-cost, .search-engine-optimization and .social-media-marketing) */
 .benefits {
   align-self: flex-start;
   padding: 20px;
@@ -185,16 +194,15 @@ a { color: var(--white-1); text-decoration: none; }
   flex-direction: column;
   box-shadow: -10px 10 15px 0 grey;
 }
-.benefits h3 { font-size: 1.75vw; }
+.benefits h1 { font-size: 1.75vw; }
 .benefits img { margin: 0 auto; display: block; max-width: 150px; }
 .benefits p { font-size: 0.85vw; font-weight: lighter;line-height: 1.5vw; }
 .benefits div { overflow: hidden; color: #ffffff; margin: auto 0 auto 0; }
 
-
 .online-reputation-management { background-image: var(--background-gradient-reverse) !important; grid-template-columns: calc(65% - 25px) 25px 35% !important; }
 .online-reputation-management img { margin: 0; grid-column: 3; }
-.online-reputation-management h2, .online-reputation-management p { justify-self: flex-end; text-align: right; grid-column: 1; }
-.online-reputation-management h2::after { right: 0; }
+.online-reputation-management h1, .online-reputation-management p { justify-self: flex-end; text-align: right; grid-column: 1; }
+.online-reputation-management h1::after { right: 0; }
 
 .footer {
   padding: 30px;
@@ -205,4 +213,4 @@ a { color: var(--white-1); text-decoration: none; }
   background-color: var(--white-1);
   filter: brightness(0.95);
 }
-.footer h2 { font-size: 20px; }
+.footer h1 { font-size: 20px; }
